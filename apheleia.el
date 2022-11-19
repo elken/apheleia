@@ -941,7 +941,6 @@ being run, for diagnostic purposes."
 (defcustom apheleia-formatters
   '((bean-format . ("bean-format"))
     (black . ("black" "-"))
-    (brittany . ("brittany"))
     (clang-format . ("clang-format"
                      "-assume-filename"
                      (or (buffer-file-name)
@@ -955,6 +954,7 @@ being run, for diagnostic purposes."
     (dart-format . ("dart" "format"))
     (elm-format . ("elm-format" "--yes" "--stdin"))
     (fish-indent . ("fish_indent"))
+    (fourmolu . ("fourmolu" file))
     (gofmt . ("gofmt"))
     (google-java-format . ("google-java-format" "-"))
     (isort . ("isort" "-"))
@@ -1137,7 +1137,7 @@ function: %s" command)))
     (fish-mode . fish-indent)
     (go-mode . gofmt)
     (graphql-mode . prettier-graphql)
-    (haskell-mode . brittany)
+    (haskell-mode . fourmolu)
     (html-mode . prettier-html)
     (java-mode . google-java-format)
     (js3-mode . prettier-javascript)
